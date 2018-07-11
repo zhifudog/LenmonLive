@@ -1,23 +1,39 @@
-/**
- * Copyright (C), 2015-2018, XXX有限公司
- * FileName: UserServiceImpl
- * Author:   Administrator
- * Date:     2018/7/8 22:45
- * Description:
- * History:
- * <author>          <time>          <version>          <desc>
- * 作者姓名           修改时间           版本号              描述
- */
-package java.com.User.service.Impl;
+package com.User.service.Impl;
 
-/**
- * 〈一句话功能简述〉<br> 
- * 〈〉
- *
- * @author Administrator
- * @create 2018/7/8
- * @since 1.0.0
- */
-public class UserServiceImpl {
+import com.User.dao.IUserDao;
+import com.User.entity.User;
+import com.User.service.IUserService;
 
+import javax.annotation.Resource;
+
+public class UserServiceImpl implements IUserService{
+    @Resource
+    private IUserDao userDao;
+
+    @Override
+    public boolean Register(User user) {
+        userDao.Register(user);
+        return true;
+    }
+
+    @Override
+    public boolean Login(User user) {
+        User userData = userDao.SelectUser(user.getId());
+        if(userData.getPassWd().equals(user.getPassWd())) {
+            return true;
+        }
+        else {
+            return false;
+        }
+    }
+
+    @Override
+    public User SelectUser() {
+        User user = new User();
+        user.setUserName("zenghl");
+        user.setEmail("343019037@qq.com");
+        user.setPhoneNumber("13527559233");
+        user.setId("1");
+        return user;
+    }
 }

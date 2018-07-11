@@ -8,7 +8,7 @@
  * <author>          <time>          <version>          <desc>
  * 作者姓名           修改时间           版本号              描述
  */
-package java.com.User.entity;
+package com.User.entity;
 
 /**
  * 〈一句话功能简述〉<br> 
