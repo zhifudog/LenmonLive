@@ -3,14 +3,15 @@ package com.User.service.Impl;
 import com.User.dao.IUserDao;
 import com.User.entity.User;
 import com.User.service.IUserService;
+import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
-
+@Service("userService")
 public class UserServiceImpl implements IUserService{
-    @Resource
-    private IUserDao userDao;
+    //@Resource
+    //private IUserDao userDao;
 
-    @Override
+   /* @Override
     public boolean Register(User user) {
         userDao.Register(user);
         return true;
@@ -25,7 +26,7 @@ public class UserServiceImpl implements IUserService{
         else {
             return false;
         }
-    }
+    } */
 
     @Override
     public User SelectUser() {

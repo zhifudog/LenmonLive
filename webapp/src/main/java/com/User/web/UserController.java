@@ -14,7 +14,6 @@ import java.io.IOException;
 @Controller
 @RequestMapping("/user")
 public class UserController {
-
         @Resource
         private IUserService userService;
         @RequestMapping("/showUser.do")
