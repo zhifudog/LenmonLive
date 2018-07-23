@@ -2,20 +2,65 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <title>Bootstrap 实例 - 超大屏幕（Jumbotron）</title>
+    <title>LemonLive</title>
     <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://cdn.bootcss.com/jquery/2.1.1/jquery.min.js"></script>
     <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
 <body>
-<p>垂直的胶囊式导航菜单</p>
-<ul class="nav nav-pills nav-stacked">
-    <li class="active"><a href="#">Home</a></li>
-    <li><a href="#">SVN</a></li>
-    <li><a href="#">iOS</a></li>
-    <li><a href="#">VB.Net</a></li>
-    <li><a href="#">Java</a></li>
-    <li><a href="#">PHP</a></li>
-</ul>
+
+<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="#">
+                <img alt="Brand" style="max-width:100px;margin-top:-14px;" src="lemon.png">
+            </a>
+        </div>
+        <div>
+            <ul class="nav navbar-nav">
+                <li><a href="#">全部直播</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                        分类 <b class="caret"></b>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">神仙</a></li>
+                        <li><a href="#">妖怪</a></li>
+                        <li><a href="#">谢谢</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="/user/showUser.do">登录</a>
+                </li>
+                <li>
+                    <a href="#">注册</a>
+                </li>
+            </ul>
+
+        </div>
+    </div>
+</nav>
+<p align="center">
+    <video width="800" height="600" controls="controls">
+        <source src="movie.ogg" type="video/ogg">
+        <source src="movie.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+</p>
+<p align="center">
+<button id="fat-btn" class="btn btn-primary"
+        type="button">开始直播
+</button>
+</p>
+<script>
+    $(function() {
+        $(".btn").click(function(){
+            $(this).button('loading').delay(1000).queue(function() {
+                // $(this).button('reset');
+                // $(this).dequeue();
+            });
+        });
+    });
+</script>
 </body>
 </html>

@@ -2,22 +2,65 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <title>Bootstrap 实例 - 超大屏幕（Jumbotron）</title>
+    <title>LemonLive</title>
     <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://cdn.bootcss.com/jquery/2.1.1/jquery.min.js"></script>
     <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
 <body>
 
-<div class="container">
-    <div class="jumbotron">
-        <h1>欢迎登陆页面！</h1>
-        <p>这是一个超大屏幕（Jumbotron）的实例。</p>
-        <p><a class="btn btn-primary btn-lg" role="button">
-            学习更多</a>
-        </p>
-    </div>
-</div>
+<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="#">
+                <img alt="Brand" style="max-width:100px;margin-top:-14px;" src="lemon.png">
+            </a>
+        </div>
+        <div>
+            <ul class="nav navbar-nav">
+                <li><a href="#">全部直播</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                        分类 <b class="caret"></b>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">神仙</a></li>
+                        <li><a href="#">妖怪</a></li>
+                        <li><a href="#">谢谢</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="/user/showUser.do">登录</a>
+                </li>
+                <li>
+                    <a href="#">注册</a>
+                </li>
+            </ul>
 
+        </div>
+    </div>
+</nav>
+<p align="center">
+    <video width="800" height="600" controls="controls">
+        <source src="movie.ogg" type="video/ogg">
+        <source src="movie.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+</p>
+<p align="center">
+<button id="fat-btn" class="btn btn-primary"
+        type="button">开始直播
+</button>
+</p>
+<script>
+    $(function() {
+        $(".btn").click(function(){
+            $(this).button('loading').delay(1000).queue(function() {
+                // $(this).button('reset');
+                // $(this).dequeue();
+            });
+        });
+    });
+</script>
 </body>
 </html>
